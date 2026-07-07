@@ -2,7 +2,7 @@
  * The problem. Bone background. A heading, four punchy pain points each with
  * a light icon, then the closing line about leaking leads.
  */
-import { Moon, Images, Timer, Shuffle } from "lucide-react";
+import { Moon, UserX, HelpCircle, CalendarX, Timer, Shuffle } from "lucide-react";
 import { Section, Eyebrow, Reveal } from "./ui";
 
 const pains = [
@@ -11,8 +11,16 @@ const pains = [
     text: "Leads message at 11pm and go cold by morning.",
   },
   {
-    icon: Images,
-    text: "You forward 25 photos to every enquiry, all day.",
+    icon: UserX,
+    text: "You mean to follow up, then the day runs away and the lead is gone.",
+  },
+  {
+    icon: HelpCircle,
+    text: "You cannot even tell who was interested, so good buyers slip through.",
+  },
+  {
+    icon: CalendarX,
+    text: "Clients forget a booked viewing and simply do not show up.",
   },
   {
     icon: Timer,

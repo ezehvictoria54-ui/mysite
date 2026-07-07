@@ -2,7 +2,14 @@
  * What you get. Bone background. Five outcome framed cards, each with an icon,
  * a short title, and one or two lines of body copy kept as separate text.
  */
-import { Zap, Link2, Users, CalendarCheck, LayoutDashboard } from "lucide-react";
+import {
+  Zap,
+  LayoutDashboard,
+  Repeat,
+  BellRing,
+  Link2,
+  CalendarCheck,
+} from "lucide-react";
 import { Section, Eyebrow, Reveal } from "./ui";
 
 const cards = [
@@ -12,24 +19,29 @@ const cards = [
     body: "Buyers get answered in seconds, day or night, so you never lose one to a slow response.",
   },
   {
-    icon: Link2,
-    title: "Your listings send themselves",
-    body: "One link instead of 25 photos. Every property lives on a page you share in a tap.",
+    icon: LayoutDashboard,
+    title: "See everyone who is interested",
+    body: "Every interested buyer sits in one place, so following up is easy.",
   },
   {
-    icon: Users,
-    title: "Buyers matched automatically",
-    body: "Add a property and every matching buyer is notified for you.",
+    icon: Repeat,
+    title: "Automatic follow up",
+    body: "The system chases every lead for you, so none of them goes cold.",
+  },
+  {
+    icon: BellRing,
+    title: "Appointment reminders sent for you",
+    body: "Clients get reminded about their viewing, so they actually show up.",
+  },
+  {
+    icon: Link2,
+    title: "Your listings send themselves",
+    body: "One link instead of 25 photos, and matching buyers are notified automatically.",
   },
   {
     icon: CalendarCheck,
     title: "Viewings book themselves",
     body: "Clients pick a slot. No back and forth.",
-  },
-  {
-    icon: LayoutDashboard,
-    title: "Every lead in one place",
-    body: "A simple dashboard instead of scattered chats.",
   },
 ];
 
