@@ -1,10 +1,11 @@
 /**
- * Walkthrough video. Pine section with a centered responsive 16:9 player that
- * embeds the YouTube video inline. It uses the privacy friendly nocookie
- * domain with rel=0, modestbranding=1 and playsinline=1 so branding and
- * related videos stay minimal and the video plays here rather than sending
- * anyone off to YouTube. Until VIDEO_ID is set it shows an elegant placeholder
- * frame with a brass play icon, never a broken iframe.
+ * Walkthrough video. Pine section with a centered responsive portrait (9:16)
+ * player that embeds the YouTube video inline. It uses the privacy friendly
+ * nocookie domain with rel=0, modestbranding=1 and playsinline=1 so branding
+ * and related videos stay minimal and the video plays here rather than sending
+ * anyone off to YouTube. The frame is portrait to match a vertical phone video,
+ * so there are no black bars. Until VIDEO_ID is set it shows an elegant
+ * placeholder frame with a brass play icon, never a broken iframe.
  */
 import { Play } from "lucide-react";
 import { VIDEO_ID } from "../site.config";
@@ -27,8 +28,8 @@ export default function VideoSection() {
       </Reveal>
 
       <Reveal delay={0.1}>
-        <div className="mx-auto mt-12 w-full max-w-3xl">
-          <div className="relative aspect-video w-full overflow-hidden rounded-sm border border-bone/15 bg-pine-deep shadow-2xl">
+        <div className="mx-auto mt-12 w-full max-w-[360px]">
+          <div className="relative aspect-[9/16] w-full overflow-hidden rounded-sm border border-bone/15 bg-pine-deep shadow-2xl">
             {hasVideo ? (
               <iframe
                 className="absolute inset-0 h-full w-full"

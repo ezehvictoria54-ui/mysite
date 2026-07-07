@@ -18,7 +18,7 @@
 // Paste your YouTube video ID here (just the id, not the full url).
 // Example: for https://www.youtube.com/watch?v=dQw4w9WgXcQ use "dQw4w9WgXcQ".
 // Leave as "" until you have it.
-export const VIDEO_ID: string = "";
+export const VIDEO_ID: string = "N5EgpAJT81s";
 
 export const siteConfig = {
   owner: {
