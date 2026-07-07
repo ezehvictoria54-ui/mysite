@@ -1,0 +1,85 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Self hosted fonts. Variable woff2 files cover the weight ranges we use. */
+@font-face {
+  font-family: "Cormorant Garamond";
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url("/fonts/cormorant-garamond-latin.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Cormorant Garamond";
+  font-style: italic;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url("/fonts/cormorant-garamond-latin-italic.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Jost";
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url("/fonts/jost-latin.woff2") format("woff2");
+}
+
+/* Brand palette. */
+:root {
+  --pine: #16342a;
+  --pine-deep: #0d211a;
+  --stone: #ede7db;
+  --stone-soft: #e2d9c9;
+  --bone: #f6f2ea;
+  --brass: #ae8747;
+  --brass-bright: #c9a25e;
+  --ink: #1d231e;
+  --sage: #7c8b77;
+  --line: rgba(29, 35, 30, 0.14);
+}
+
+html {
+  scroll-behavior: smooth;
+  /* Offset in page anchors so the sticky bar never covers a heading. */
+  scroll-padding-top: 84px;
+}
+
+body {
+  background-color: var(--bone);
+  color: var(--ink);
+  font-family: "Jost", system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* Uppercase brass label with wide letter spacing. */
+.eyebrow {
+  font-family: "Jost", system-ui, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  font-weight: 500;
+  font-size: 0.75rem;
+  color: var(--brass);
+}
+
+/* Visible focus states for keyboard users. */
+:focus-visible {
+  outline: 2px solid var(--brass-bright);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* Respect users who prefer reduced motion. */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
