@@ -1,14 +1,22 @@
 /**
- * Walkthrough video. Pine section with a centered responsive 16:9 player that
- * embeds VIDEO_URL. Until VIDEO_URL is set it shows an elegant placeholder
- * frame with a brass play icon, never a broken iframe.
+ * Walkthrough video. Pine section with a centered responsive portrait (9:16)
+ * player that embeds the YouTube video inline. It uses the privacy friendly
+ * nocookie domain with rel=0, modestbranding=1 and playsinline=1 so branding
+ * and related videos stay minimal and the video plays here rather than sending
+ * anyone off to YouTube. The frame is portrait to match a vertical phone video,
+ * so there are no black bars. Until VIDEO_ID is set it shows an elegant
+ * placeholder frame with a brass play icon, never a broken iframe.
  */
 import { Play } from "lucide-react";
-import { VIDEO_URL } from "../site.config";
+import { VIDEO_ID } from "../site.config";
 import { Section, Eyebrow, Reveal } from "./ui";
 
 export default function VideoSection() {
-  const hasVideo = VIDEO_URL.trim() !== "";
+  const hasVideo = VIDEO_ID.trim() !== "";
+  // Build the inline embed url. rel=0 limits related videos to this channel,
+  // modestbranding=1 minimises YouTube branding, playsinline=1 keeps it in the
+  // page on mobile instead of going full screen.
+  const embedSrc = `https://www.youtube-nocookie.com/embed/${VIDEO_ID}?rel=0&modestbranding=1&playsinline=1`;
 
   return (
     <Section id="walkthrough" bg="bg-pine">
@@ -20,12 +28,12 @@ export default function VideoSection() {
       </Reveal>
 
       <Reveal delay={0.1}>
-        <div className="mx-auto mt-12 w-full max-w-3xl">
-          <div className="relative aspect-video w-full overflow-hidden rounded-sm border border-bone/15 bg-pine-deep shadow-2xl">
+        <div className="mx-auto mt-12 w-full max-w-[360px]">
+          <div className="relative aspect-[9/16] w-full overflow-hidden rounded-sm border border-bone/15 bg-pine-deep shadow-2xl">
             {hasVideo ? (
               <iframe
                 className="absolute inset-0 h-full w-full"
-                src={VIDEO_URL}
+                src={embedSrc}
                 title="Walkthrough of the lead system Victoria Ezeh builds"
                 loading="lazy"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"

@@ -1,16 +1,14 @@
 /**
  * Hero. Pine background, eyebrow label, big Cormorant headline, a supporting
  * line, and two calls to action: book a free call (scrolls to booking) and
- * view the live demo (opens DEMO_URL in a new tab, graceful when unset).
+ * see live demo (smooth scrolls to the walkthrough video on this page).
  */
 import { motion, useReducedMotion } from "framer-motion";
 import type { Variants } from "framer-motion";
-import { DEMO_URL } from "../site.config";
 import { BrassButton, GhostButton, Eyebrow, scrollToId } from "./ui";
 
 export default function Hero() {
   const reduce = useReducedMotion();
-  const demoReady = DEMO_URL !== "#" && DEMO_URL.trim() !== "";
 
   const container: Variants = {
     hidden: {},
@@ -45,23 +43,24 @@ export default function Hero() {
         className="relative mx-auto max-w-content"
       >
         <motion.div variants={item}>
-          <Eyebrow>Lead systems for estate agents</Eyebrow>
+          <Eyebrow>Lead system for real estate agents</Eyebrow>
         </motion.div>
 
         <motion.h1
           variants={item}
           className="mt-6 max-w-4xl font-serif text-4xl font-semibold leading-[1.08] text-bone sm:text-5xl md:text-6xl"
         >
-          Estate agents are losing deals to slow replies. I build the system that
-          fixes it in 7 days.
+          You are losing deals to slow replies
         </motion.h1>
 
         <motion.p
           variants={item}
           className="mt-7 max-w-2xl font-sans text-lg leading-relaxed text-stone-soft"
         >
-          Never lose another lead to a late reply or a missed message. I set up
-          the system that answers every buyer for you, day and night.
+          And to the leads you never followed up, the enquiries buried in your
+          chats, and the viewings clients forget. I build one system that answers
+          buyers instantly, shows you everyone who is interested, follows up for
+          you, and reminds clients about their appointments.
         </motion.p>
 
         <motion.div
@@ -72,20 +71,9 @@ export default function Hero() {
             Book a free call
           </BrassButton>
 
-          {demoReady ? (
-            <GhostButton href={DEMO_URL} newTab tone="light">
-              View the live demo
-            </GhostButton>
-          ) : (
-            <GhostButton
-              tone="light"
-              className="cursor-default opacity-70"
-              aria-disabled="true"
-              title="The live demo link is being added"
-            >
-              Live demo coming soon
-            </GhostButton>
-          )}
+          <GhostButton tone="light" onClick={() => scrollToId("walkthrough")}>
+            See live demo
+          </GhostButton>
         </motion.div>
       </motion.div>
     </section>
