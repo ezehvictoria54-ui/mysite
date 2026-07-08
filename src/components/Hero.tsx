@@ -28,7 +28,7 @@ export default function Hero() {
   return (
     <section
       id="top"
-      className="relative overflow-hidden bg-pine px-6 pt-32 pb-24 sm:pt-40 sm:pb-28"
+      className="relative overflow-hidden bg-pine px-6 pt-24 pb-24 sm:pt-28 sm:pb-28"
     >
       {/* Soft brass glow, purely decorative. */}
       <div
@@ -50,7 +50,8 @@ export default function Hero() {
           variants={item}
           className="mt-6 max-w-4xl font-serif text-4xl font-semibold leading-[1.08] text-bone sm:text-5xl md:text-6xl"
         >
-          You are losing deals to slow replies
+          You are losing deals to slow replies. I built the system that fixes it
+          in 3 days.
         </motion.h1>
 
         <motion.p

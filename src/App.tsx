@@ -1,7 +1,6 @@
 /**
  * Single scrolling landing page. One component per section, top to bottom.
  */
-import TopBar from "./components/TopBar";
 import Hero from "./components/Hero";
 import Problem from "./components/Problem";
 import VideoSection from "./components/VideoSection";
@@ -14,7 +13,6 @@ import Footer from "./components/Footer";
 export default function App() {
   return (
     <>
-      <TopBar />
       <main>
         <Hero />
         <Problem />
