@@ -54,7 +54,7 @@ export default function VideoSection() {
 
       <Reveal delay={0.15}>
         <p className="mt-7 text-center font-sans text-base text-stone-soft">
-          A 90 second look at the system I will build for you.
+          A short walkthrough of the exact system I will build for you.
         </p>
       </Reveal>
     </Section>

@@ -41,8 +41,8 @@
 
 html {
   scroll-behavior: smooth;
-  /* Offset in page anchors so the sticky bar never covers a heading. */
-  scroll-padding-top: 84px;
+  /* A small offset so in page anchors leave a little breathing room on top. */
+  scroll-padding-top: 24px;
 }
 
 body {
